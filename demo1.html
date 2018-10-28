@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <!-- 注释  -->
+    </head>
+<body>
+
+<input id='txt'>
+<input id='btnadd' type='button' value='add'>
+
+
+<ul id='list'><ul>
+
+<script>
+
+  var txt = document.querySelector('#txt'); // obtain the txt 
+  var btn = document.querySelector('#btnadd'); //  obtain the btn 
+  btn.addEventListener('click',function(e){
+      var now = txt.value-0;
+      now=now+1;
+      txt.value = now;
+  });
+
+
+  var data = [
+      {'name':'cx','age':29}, 
+      {'name':'hxd','age':30}
+  ]
+   var ulelem = document.querySelector('#list')
+   for(var i=0; i<data.length ;i++){
+   var item = data[i]; 
+   var lielem = document.createElement('li');
+   lielem.dataset['id']=i;
+   lielem.dataset['name']=item.name;
+   var spanelem1 = document.createElement('span');
+   var namenode = document.createTextNode(item.name);
+   spanelem1.appendChild(namenode);
+
+   var spanelem = document.createElement('span');
+   var agenode = document.createTextNode(item.age);
+   spanelem.appendChild(agenode);
+   lielem.appendChild(spanelem1);
+   lielem.appendChild(spanelem);
+   
+   ulelem.appendChild(lielem);
+   }
+ 
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <!-- 注释  -->
+    </head>
+<body>
+    <!--declare div was controlled by the democontroller-->
+        <div ng-app = "myApp"  ng-controller="DemoController" > 
+                <!--initiallize the user.name-->
+                    <h1> Angular Data binding </h1>
+                        <p>
+                            <input type ="text" placeholder="please enter your name" 
+                            ng-model ="user.name">
+                        </p>
+                        <p> hello  I am <strong>{{user.name}}</strong> </p>
+
+        <button ng-click = "show()"> show the name  </button>
+       </div>
+
+<script src="./node_modules/angular/angular.js"></script>
+<script>
+// 注册模块 
+// 第一个参数 是这个模块的名字
+// 第二个 参数 是新建模块所需要的其他模块  
+// 
+var App = angular.module('myApp',[]); 
+
+// 创建一个控制器 
+// 该控制器 属于 maApp 模块
+
+App.controller('DemoController', function($scope){
+// 控制器函数；  当控制器 执行时 会自动执行
+// $scope: data model  
+$scope.user =[]; 
+$scope.user.name ='CX50';
+
+// define function 
+$scope.show = function(){
+    console.log($scope.user.name) 
+}
+});
+
+
+</script>
+</body>
+</html>

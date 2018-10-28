@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <!-- 注释  -->
+        <title> angular hello world !</title>
+    </head>
+<body>  <!-- this calling angular -->
+
+
+<div ng-app ng-init="user.city='Beijing'"  >
+<!--initiallize the user.name-->
+    <h1> Angular Data binding </h1>
+        <p>
+            <input type ="text" placeholder="please enter your name" 
+            ng-model ="user.name">
+        </p>
+        <p>
+                <input type ="text" placeholder="please enter your age" 
+                ng-model ="user.age">
+            </p>
+
+            <p>
+                    <input type ="text" placeholder="please enter your city name" 
+                    ng-model ="user.city">
+                </p>
+        <p> hello  I am <strong>{{user.name}}</strong> </p> <!--data model binding with input and innerHtml -->
+        <p> I am <strong>{{user.age}}</strong> years old </p> <!--data model binding with input and innerhtml -->
+        <p> I live in {{::user.city}} <!--only binding the data model with the label-->
+    </div>
+
+    <script src="./node_modules/angular/angular.js"></script>
+
+</body>
+</html>
